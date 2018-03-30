@@ -119,4 +119,6 @@ Powershell
 
 result:
     
-     PS /home/jeroen/scripts> ./testtcp.ps1                                                                                      FLNX|disk|green||1521983717|1522397168|1522398968|0|0|127.0.0.1||green Fri Mar 30 10:06:03 CEST 2018 - Filesystems ok
+     PS /home/jeroen/scripts> ./testtcp.ps1         
+     
+     FLNX|disk|green||1521983717|1522397168|1522398968|0|0|127.0.0.1||green Fri Mar 30 10:06:03 CEST 2018 - Filesystems ok
