@@ -101,3 +101,22 @@ result
    
    serverX|disk|red||1522068617|1522317617|1522319417|0|0|x.x.x.x|845851|red Thu Mar 29 12:00:09 CEST 2018 - Filesystems NOT ok
 
+Powershell
+
+     $port=1984
+     $remoteHost = "localhost"
+     $Message = 'xymondboard test=disk'
+     $socket = new-object System.Net.Sockets.TcpClient($remoteHost, $port)
+     $data = [System.Text.Encoding]::ASCII.GetBytes($message)
+     $stream = $socket.GetStream()
+     $buffer = New-Object System.Byte[] 1024
+     $encoding = New-Object System.Text.AsciiEncoding
+     $stream.Write($data, 0, $data.Length)
+     $socket.client.shutdown(1)
+     $read = $stream.Read( $buffer, 0, 1024 )
+     Write-Host -n ($encoding.GetString( $buffer, 0, $read ))
+     $socket.close()
+
+result:
+    
+     PS /home/jeroen/scripts> ./testtcp.ps1                                                                                      FLNX|disk|green||1521983717|1522397168|1522398968|0|0|127.0.0.1||green Fri Mar 30 10:06:03 CEST 2018 - Filesystems ok
