@@ -10,3 +10,7 @@ it uses node.js express library and xml2js (both install via 'npm install' comma
 ## readfromXymon 
 
 Shows how to query xymondboard (xymondxboard for xml) without the xymon client directly from code in perl, python, node and even powershell.
+
+## inflyxXymond.pl
+
+Perl script that illustrates how to hook into xymon's status channel, parse the data and store it in an influxdb timeseries database.
