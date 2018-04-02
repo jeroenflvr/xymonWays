@@ -102,6 +102,7 @@ ie. perl to query for the disk status of serverX
    serverX|disk|red||1522068617|1522317617|1522319417|0|0|x.x.x.x|845851|red Thu Mar 29 12:00:09 CEST 2018 - Filesystems NOT ok
 
 ## Powershell
+This code was built using powershell on Ubuntu 16.04 LTS but I also tested it on a Windows 10 (Creators Update)
 
      $port=1984
      $remoteHost = "localhost"
