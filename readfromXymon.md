@@ -5,7 +5,7 @@ You can capture the status messages or data coming in, parse them, and store tho
 
 you don't need the xymon client
 
-perl 
+## perl 
 
 ie. perl to query for the disk status of serverX 
 
@@ -25,13 +25,13 @@ ie. perl to query for the disk status of serverX
       14 print "$answer\n";
       15 close ($sock);
 
-Result:
+### result
 
    $ perl query_xymon.pl
    
    serverX|disk|red||1522068617|1522309817|1522311617|0|0|x.x.x.x|845851|red Thu Mar 29 09:50:08 CEST 2018 - Filesystems NOT ok
 
-python
+## python
 
         1 import socket
         2 import sys
@@ -71,7 +71,7 @@ python
        36
        37 print result
        
-result
+### result
 
    $ python query_xymon.py
    
@@ -79,7 +79,7 @@ result
 
        
 
-node.js 
+## node.js 
 
         1 var net = require('net');
         2
@@ -95,13 +95,13 @@ node.js
        12 });
 
        
-result
+### result
 
    $ node query_x.js
    
    serverX|disk|red||1522068617|1522317617|1522319417|0|0|x.x.x.x|845851|red Thu Mar 29 12:00:09 CEST 2018 - Filesystems NOT ok
 
-Powershell
+## Powershell
 
      $port=1984
      $remoteHost = "localhost"
@@ -117,7 +117,7 @@ Powershell
      Write-Host -n ($encoding.GetString( $buffer, 0, $read ))
      $socket.close()
 
-result:
+### result
     
      PS /home/jeroen/scripts> ./testtcp.ps1         
      
