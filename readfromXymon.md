@@ -123,3 +123,16 @@ This code was built using powershell on Ubuntu 16.04 LTS but I also tested it on
      PS /home/jeroen/scripts> ./testtcp.ps1         
      
      FLNX|disk|green||1521983717|1522397168|1522398968|0|0|127.0.0.1||green Fri Mar 30 10:06:03 CEST 2018 - Filesystems ok
+
+## bash redirection
+I didn't succeed on getting this to work, I don't think there's a way to tell it that the writing stream has finished and that we're ready to start receiving the response.
+Here's an excellent cheat sheet on bash's redirection: http://blog.opensourceworks.org/?p=78
+
+mock up:
+
+     exec 5<> /dev/tcp/127.0.0.1/1984
+     echo "xymondboard host=serverX test=disk" >&5
+     exec 5>&-
+     cat <&5
+     
+     
